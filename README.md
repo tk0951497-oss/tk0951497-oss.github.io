@@ -1,106 +1,122 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="FastSave - Download Instagram Reels, YouTube Shorts, and more in HD for free!">
-    <title>FastSave - Download Reels & Shorts Instantly</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Poppins', sans-serif;
-            background-color: #f5f5f5;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            text-align: center;
-        }
-        .container {
-            background: white;
-            border-radius: 15px;
-            padding: 30px;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-            max-width: 500px;
-            width: 90%;
-        }
-        h1 {
-            color: #ff4d8d;
-            font-size: 2.5rem;
-            margin-bottom: 10px;
-        }
-        .tagline {
-            color: #666;
-            font-size: 1.1rem;
-            margin-bottom: 30px;
-        }
-        .btn {
-            display: block;
-            width: 100%;
-            padding: 15px;
-            margin: 15px 0;
-            border: none;
-            border-radius: 8px;
-            font-size: 1.1rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-        .btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-        }
-        #reel-btn {
-            background-color: #ff4d8d;
-            color: white;
-        }
-        #shorts-btn {
-            background-color: #ff0000;
-            color: white;
-        }
-        #others-btn {
-            background-color: #000000;
-            color: white;
-        }
-        .features {
-            margin-top: 30px;
-            text-align: left;
-            font-size: 0.95rem;
-            color: #555;
-        }
-        .features h2 {
-            color: #333;
-            font-size: 1.3rem;
-            margin-bottom: 10px;
-        }
-        .features ul {
-            padding-left: 20px;
-        }
-        .features li {
-            margin-bottom: 8px;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>25-Day Hardcore Transformation Calendar</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background-color: #f0f0f0;
+    }
+    h1 {
+      text-align: center;
+    }
+    .calendar {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 10px;
+      margin-top: 20px;
+    }
+    .day {
+      background-color: #fff;
+      padding: 15px;
+      border-radius: 8px;
+      cursor: pointer;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      transition: 0.2s;
+    }
+    .day:hover {
+      background-color: #e0ffe0;
+    }
+    .details {
+      margin-top: 10px;
+      display: none;
+    }
+    .active .details {
+      display: block;
+    }
+    .rest-day {
+      background-color: #ffe0e0;
+    }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <h1>FastSave</h1>
-        <p class="tagline">Download Instagram Reels, YouTube Shorts & More in One Click!</p>
-        
-        <button id="reel-btn" class="btn" onclick="window.open('https://fastvideosave.net/', '_blank')">Reel Downloader</button>
-        <button id="shorts-btn" class="btn" onclick="window.open('https://yt.savetube.me/1kejjj1', '_blank')">Shorts Downloader</button>
-        <button id="others-btn" class="btn" onclick="alert('Server is busy. Please try again later.')">Others</button>
-        
-        <div class="features">
-            <h2>Why Choose FastSave?</h2>
-            <ul>
-                <li>🚀 <strong>Super Fast</strong> - Download videos in seconds.</li>
-                <li>🔒 <strong>100% Free</strong> - No hidden charges.</li>
-                <li>📱 <strong>No App Needed</strong> - Works directly in your browser.</li>
-                <li>💡 <strong>Easy to Use</strong> - Just paste the link and download!</li>
-            </ul>
-        </div>
-    </div>
+  <h1>25-Day Hardcore Home Transformation</h1>
+  <div class="calendar" id="calendar"></div>
+
+  <script>
+    const startDate = new Date("2025-08-03");
+    const days = 25;
+    const calendar = document.getElementById("calendar");
+
+    const upperBodyPlan = `
+      <strong>Upper Body + Core:</strong><br>
+      1. Pull-Ups – 4 x Max Reps<br>
+      2. Diamond Push-Ups – 4 x 15-20<br>
+      3. Pike Push-Ups – 3 x 12<br>
+      4. Superman Holds – 3 x 30s<br>
+      5. Plank-to-Push-Up – 3 x 10<br>
+      <em>Core Finisher:</em><br>
+      Hanging Leg Raises, Russian Twists, Side Plank
+    `;
+
+    const lowerBodyPlan = `
+      <strong>Lower Body + Cardio:</strong><br>
+      1. Pistol/Bulgarian Split Squats – 4 x 10/leg<br>
+      2. Jump Squats – 3 x 20<br>
+      3. Glute Bridges – 3 x 15<br>
+      4. Burpees – 4 x 15<br>
+      5. Mountain Climbers – 3 x 30s<br>
+      <em>Core Finisher:</em><br>
+      Hanging Leg Raises, Russian Twists, Side Plank
+    `;
+
+    for (let i = 0; i < days; i++) {
+      const date = new Date(startDate);
+      date.setDate(startDate.getDate() + i);
+      const dayOfWeek = date.getDay();
+      const dateStr = date.toDateString();
+
+      const div = document.createElement("div");
+      div.classList.add("day");
+
+      const title = document.createElement("div");
+      title.innerHTML = `<strong>${dateStr}</strong>`;
+
+      const details = document.createElement("div");
+      details.classList.add("details");
+
+      if ((i + 1) % 7 === 0) {
+        // Rest day
+        div.classList.add("rest-day");
+        details.innerHTML = `<strong>Rest Day:</strong> Recovery and hydration.`;
+      } else if ((i % 2) === 0) {
+        // Upper Body Days: Day 1, 3, 5 etc.
+        details.innerHTML = upperBodyPlan;
+      } else {
+        // Lower Body Days: Day 2, 4, 6 etc.
+        details.innerHTML = lowerBodyPlan;
+      }
+
+      div.appendChild(title);
+      div.appendChild(details);
+
+      div.addEventListener("click", () => {
+        div.classList.toggle("active");
+      });
+      div.addEventListener("dblclick", () => {
+        div.classList.remove("active");
+      });
+
+      calendar.appendChild(div);
+    }
+  </script>
 </body>
 </html>
+
+
+Here's your complete HTML code for a
+
